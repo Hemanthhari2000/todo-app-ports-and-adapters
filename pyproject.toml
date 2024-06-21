@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "todo-with-ports-and-adapters"
+version = "0.1.0"
+description = "Todo application using the ports and adapters pattern or hexagonal architecture"
+authors = ["Hemanth", "hemanthhari2000@gmail.com"]
+readme = "README.md"
+packages = [
+    {include = "adapters", from = "src"}, 
+    {include = "domain", from = "src"}, 
+    {include = "entrypoints", from = "src"}, 
+    {include = "*.py", from = "src"}, 
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.111.0"
+sqlalchemy = "^2.0.30"
+alembic = "^1.13.1"
+pydantic = "^2.7.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
