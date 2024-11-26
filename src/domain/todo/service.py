@@ -1,14 +1,14 @@
 from typing import List
 
 from adapters.db.schema import TodoTable
-from adapters.todo_adapter import TodoAdapter
+from domain.ports.todo import TodoPort
 from domain.todo.model import TodoModel
 
 
 class TodoService:
 
-    def __init__(self) -> None:
-        self.todo_adapter = TodoAdapter()
+    def __init__(self, todo_port: TodoPort) -> None:
+        self.todo_adapter = todo_port
 
     def create(self, todo: TodoModel) -> None:
         todo = TodoTable(**todo.model_dump())
