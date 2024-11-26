@@ -1,7 +1,6 @@
 from typing import List, Protocol
 
 from adapters.db.schema import TodoTable
-from domain.todo.model import TodoModel
 
 
 class TodoPort(Protocol):
